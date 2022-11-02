@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+    <title>Online music website </title>
+      <style>
+          body{background-color: #FFFFFF;
+               font-family: sans-serif;
+              }    
+          img{
+              width:100%;
+                  min-height:250px;
+          }
+          .main{
+              padding:40px 0;
+          }
+          .col-md-3{
+              margin-bottom: 40px;
+          }
+          .album-poster{
+              position: relative;
+              display: block;
+              border-radius: 7px;
+              overflow: hidden;
+              box-shadow: 0 15px 35px #3d2173a1;
+              transition: all ease 0.4s;
+          }
+          .album-poster:hover{
+              box-shadow: none;
+              transform: scale(0.98) translateY(5px);
+          }
+          h3{
+              font size:34px;
+              margin-bottom: 34px;
+              border-bottom: 4px solid #e6e6e6;
+              padding-bottom: 15px;          
+          }
+          p{
+              font-size: 15px;
+          }
+          h4{
+              16px
+              text-transform: uppercase;
+              margin-top: 15px;
+              font-weight: 700;
+          }
+          
+          #aplayer{
+              position: fixed;
+              bottom: -100%;
+              left: 0;
+              width: 100%;
+              margin: 0;
+              box-shadow: 0 -2px 2px #dadada;
+              background-color: #fff;
+              transition: all ease 0.5s;
+          }
+ 
+          #aplayer.showPlayer{
+              bottom: 0;
+          }
+          span{
+              color: #000 !important;
+              font-size: 16px;
+          }
+          .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded{
+             background: #e0e0e0;
+             height: 4px;
+          }
+          .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{
+             height:4px;
+             background-color: #2196F3 !important;
+          }
+          .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
+             background-color: #2196F3 !important;
+          }
+          .aplayer .aplayer-icon{
+              width: 20px;
+              height: 20px;
+          }
+          .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{
+              fill: #000;
+          }
+          .aplayer .aplayer-info .aplayer-music{
+              margin-bottom: 5px;
+          }
+          
+      </style>
+  </head>
+  <body>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e6e6e6;
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #e6e6e6;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #87CEEB;
+  color: white;
+}
+</style>
+</head>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="Ranking.html">Ranking</a>
+  <a href="User Profile.html">User Profile</a>
+</div>
+
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>New Releases</h3>
+      </div>
+        <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "0">
+                <img src="https://m.media-amazon.com/images/I/21B5jkp97yL._AC_.jpg" >
+               </a>
+            <h4>SOLO</h4>
+            <p>Jennie Kim</p>
+        </div>
+         <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "1">
+                <img src="https://media.pitchfork.com/photos/5e7d02b9e21e4f0009eaefd6/1:1/w_320,c_limit/Future%20Nostalgia_Dua%20Lipa.jpg" >
+               </a> 
+            <h4>Future Nostalgia</h4>
+            <p>Dua Lipa</p>
+        </div>
+         <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "2">
+                <img src="https://static.wikia.nocookie.net/justin-bieber/images/a/a4/Stay.jpg/revision/latest/scale-to-width-down/350?cb=20210708173751" >
+               </a>
+            <h4>STAY</h4>
+            <p>Justin Bieber/Kid Laroi</p>
+        </div>
+         <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "3">
+                <img src="https://t2.genius.com/unsafe/327x327/https%3A%2F%2Fimages.genius.com%2F0a12c97452da305c176cdd701cf2b7f9.1000x1000x1.jpg" >
+               </a>
+            <h4>Bang Bang</h4>
+            <p>Jessie J/Ariana Grande/Nicki Minaj</p>
+        </div>
+        <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "4">
+                <img src="https://t2.genius.com/unsafe/327x327/https%3A%2F%2Fimages.genius.com%2Fec1a523ae74e9d9141567e886ea1a933.1000x1000x1.jpg" >
+               </a>
+            <h4>2step</h4>
+            <p>Ed Sheeran</p>
+        </div>
+        <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "5">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c8/Luis_Fonsi_Feat._Daddy_Yankee_-_Despacito_%28Official_Single_Cover%29.png" >
+               </a>
+            <h4>Despacito</h4>
+            <p>Luis Fonsi</p>
+        </div>
+        <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Shawn_Mendes_and_Camila_Cabello_-_Se%C3%B1orita.png" >
+               </a>
+            <h4>Senorita</h4>
+            <p>Shawn Mendes/Camila Cabello</p>
+        </div>
+        <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch= "7">
+                <img src="https://i1.sndcdn.com/artworks-000584234423-y1fg41-t500x500.jpg" >
+               </a>
+            <h4>Bad Guy</h4>
+            <p>Billie Eilish</p>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Coming Soon</h3>
+          </div>
+         <div class="col-md-2">
+             <a href="#" class="album-poster">
+               <img src="https://i1.sndcdn.com/artworks-hHRNAPyoL1gTPNV7-mUwz9A-t500x500.jpg" alt="">
+             </a>
+        <h4>Ed Sheeran</h4>
+     
+    </div> 
+          <div class="col-md-2">
+             <a href="#" class="album-poster">
+               <img src="https://upload.wikimedia.org/wikipedia/en/1/10/David_Guetta_-_Hey_Mama_%28feat._Nicki_Minaj%2C_Bebe_Rexha_and_Afrojack%29.png" alt="">
+             </a>
+        <h4>David Guetta</h4>
+     
+    </div> 
+ <div class="col-md-2">
+             <a href="#" class="album-poster">
+               <img src="https://i.scdn.co/image/ab67616d0000b273350ecac91d0f0af55788c648" alt="">
+             </a>
+        <h4>Jeon Somi</h4>
+     
+    </div> 
+         <div class="col-md-2">
+             <a href="#" class="album-poster">
+               <img src="https://soundvapors.com/wp-content/uploads/2021/01/Harry-Styles-Fine-Line-Album-Artwork-stream.jpg" alt="">
+             </a>
+        <h4>Harry Styles</h4>
+     
+    </div> 
+         <div class="col-md-2">
+             <a href="#" class="album-poster">
+               <img src="https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png" alt="">
+             </a>
+        <h4>Michael Jackson</h4>
+     
+    </div> 
+         <div class="col-md-2">
+             <a href="#" class="album-poster">
+               <img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Babycoverart.jpg" alt="">
+             </a>
+        <h4>Justin Bieber</h4>
+     
+    </div> 
+      </div>
+    </div>
+  </div>
+<div id="aplayer"></div>  
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"> </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"> </script> 
+      
+      <script>
+          
+         $(".album-poster"). on('click', function (e){
+             var dataSwitchId = $(this).attr('data-switch');
+             console.log(dataSwitchId);
+             ap.list.switch(dataSwitchId);
+             ap.play();
+             $("#aplayer").addClass('showPlayer');
+         } );
+         
+          
+          const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+          listFolded: true,
+    audio: [
+        {
+        name: 'SOLO',
+        artist: 'Jennie Kim',
+        url: 'SOLO.mp3',
+        cover: 'https://m.media-amazon.com/images/I/21B5jkp97yL._AC_.jpg'
+        },
+        {
+        name: 'Future Nostalgia',
+        artist: 'Dua Lipa',
+        url: 'Future Nostalgia.mp3',
+        cover: 'https://media.pitchfork.com/photos/5e7d02b9e21e4f0009eaefd6/1:1/w_320,c_limit/Future%20Nostalgia_Dua%20Lipa.jpg'
+        },
+        {
+        name: 'STAY',
+        artist: 'Justin Bieber/Kid Laroi',
+        url: 'STAY.mp3',
+        cover: 'https://static.wikia.nocookie.net/justin-bieber/images/a/a4/Stay.jpg/revision/latest/scale-to-width-down/350?cb=20210708173751'
+        },
+        {
+        name: 'Bang Bang',
+        artist: 'Jessie J/Ariana Grande/Nicki Minaj',
+        url: 'Bang Bang.mp3',
+        cover: 'https://t2.genius.com/unsafe/327x327/https%3A%2F%2Fimages.genius.com%2F0a12c97452da305c176cdd701cf2b7f9.1000x1000x1.jpg'
+        },
+        {
+        name: '2step',
+        artist: 'Ed Sheeran',
+        url: '2step.mp3',
+        cover: 'https://t2.genius.com/unsafe/327x327/https%3A%2F%2Fimages.genius.com%2Fec1a523ae74e9d9141567e886ea1a933.1000x1000x1.jpg'
+        },
+        {
+        name: 'Despacito',
+        artist: 'Luis Fonsi',
+        url: 'Despacito.mp3',
+        cover: 'https://upload.wikimedia.org/wikipedia/en/c/c8/Luis_Fonsi_Feat._Daddy_Yankee_-_Despacito_%28Official_Single_Cover%29.png'
+        },
+        {
+        name: 'Senorita',
+        artist: 'Shawn Mendes/Camila Cabello',
+        url: 'Senorita.mp3',
+        cover: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Shawn_Mendes_and_Camila_Cabello_-_Se%C3%B1orita.png'
+        },
+        {
+        name: 'Bad Guy',
+        artist: 'Billie Eilish',
+        url: 'Bad guy.mp3',
+        cover: 'https://i1.sndcdn.com/artworks-000584234423-y1fg41-t500x500.jpg'
+        },
+           ]
+              
+});
+      
+      </script>
+      <p>ALL THE MUSICS ARE DOWNLOADED FORM SOUNDCLOUD.COM WHICH ARE CREATIVE COMMONS MUSIC AND ARE NOT PROCTED BY ANY ACT</p>
+  </body>
+      </html>
